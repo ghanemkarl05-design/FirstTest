@@ -1,0 +1,151 @@
+.cv {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 3rem;
+    background: #ffffff;
+    font-family: 'Salesforce Sans', Arial, sans-serif;
+    color: #1a1a1a;
+}
+
+.cv-header {
+    text-align: center;
+    border-bottom: 2px solid #16325c;
+    padding-bottom: 1rem;
+    margin-bottom: 1.75rem;
+}
+
+.cv-name {
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin: 0 0 0.4rem 0;
+    color: #16325c;
+}
+
+.cv-contact {
+    font-size: 0.85rem;
+    color: #54698d;
+    margin: 0;
+}
+
+.cv-contact a {
+    color: #0070d2;
+    text-decoration: none;
+}
+
+.cv-contact a:hover {
+    text-decoration: underline;
+}
+
+.cv-section {
+    margin-bottom: 1.6rem;
+}
+
+.cv-section-last {
+    margin-bottom: 0;
+}
+
+.cv-section-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #16325c;
+    border-bottom: 1px solid #d8dde6;
+    padding-bottom: 0.35rem;
+    margin: 0 0 0.75rem 0;
+}
+
+.cv-text {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin: 0;
+    color: #2b2b2b;
+}
+
+.cv-text-small {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin: 0.15rem 0 0 0;
+    color: #54698d;
+}
+
+.cv-skill-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cv-skill-list li {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin-bottom: 0.25rem;
+    color: #2b2b2b;
+}
+
+.cv-skill-label {
+    font-weight: 700;
+    color: #16325c;
+}
+
+.cv-language-list li {
+    display: inline-block;
+    margin-right: 1.5rem;
+}
+
+.cv-entry {
+    margin-bottom: 1.1rem;
+}
+
+.cv-entry:last-child {
+    margin-bottom: 0;
+}
+
+.cv-entry-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.cv-entry-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.cv-entry-date {
+    font-size: 0.8rem;
+    color: #706e6b;
+    white-space: nowrap;
+}
+
+.cv-entry-subtitle {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #54698d;
+    margin: 0.1rem 0 0.3rem 0;
+}
+
+.cv-bullets {
+    margin: 0.3rem 0 0 1.1rem;
+    padding: 0;
+}
+
+.cv-bullets li {
+    font-size: 0.86rem;
+    line-height: 1.5;
+    margin-bottom: 0.25rem;
+    color: #2b2b2b;
+}
+
+@media (max-width: 480px) {
+    .cv {
+        padding: 1.5rem 1.2rem 2rem;
+    }
+    .cv-entry-row {
+        flex-direction: column;
+        gap: 0.1rem;
+    }
+}
