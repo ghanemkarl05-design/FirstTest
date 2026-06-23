@@ -1,0 +1,33 @@
+<template>
+    <div class="calculator">
+        <div class="display">
+            <div class="display-expression">{expression}</div>
+            <div class="display-result">{displayValue}</div>
+        </div>
+
+        <div class="keypad">
+            <button class="btn btn-function" data-value="clear" onclick={handleClear}>C</button>
+            <button class="btn btn-function" data-value="backspace" onclick={handleBackspace}>⌫</button>
+            <button class="btn btn-operator" data-value="/" onclick={handleOperator}>/</button>
+            <button class="btn btn-operator" data-value="*" onclick={handleOperator}>×</button>
+
+            <button class="btn btn-number" data-value="7" onclick={handleNumber}>7</button>
+            <button class="btn btn-number" data-value="8" onclick={handleNumber}>8</button>
+            <button class="btn btn-number" data-value="9" onclick={handleNumber}>9</button>
+            <button class="btn btn-operator" data-value="-" onclick={handleOperator}>−</button>
+
+            <button class="btn btn-number" data-value="4" onclick={handleNumber}>4</button>
+            <button class="btn btn-number" data-value="5" onclick={handleNumber}>5</button>
+            <button class="btn btn-number" data-value="6" onclick={handleNumber}>6</button>
+            <button class="btn btn-operator" data-value="+" onclick={handleOperator}>+</button>
+
+            <button class="btn btn-number" data-value="1" onclick={handleNumber}>1</button>
+            <button class="btn btn-number" data-value="2" onclick={handleNumber}>2</button>
+            <button class="btn btn-number" data-value="3" onclick={handleNumber}>3</button>
+            <button class="btn btn-equals" data-value="=" onclick={handleEquals}>=</button>
+
+            <button class="btn btn-number btn-zero" data-value="0" onclick={handleNumber}>0</button>
+            <button class="btn btn-number" data-value="." onclick={handleDecimal}>.</button>
+        </div>
+    </div>
+</template>
