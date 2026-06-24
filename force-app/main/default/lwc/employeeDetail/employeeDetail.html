@@ -1,0 +1,73 @@
+<template>
+    <div class="container">
+        <h2 class="title">Add Employee</h2>
+
+        <div class="form">
+            <lightning-input
+                label="Employee Name"
+                value={name}
+                onchange={handleNameChange}>
+            </lightning-input>
+
+            <lightning-input
+                label="Age"
+                type="number"
+                value={age}
+                onchange={handleAgeChange}>
+            </lightning-input>
+
+            <lightning-input
+                label="Email"
+                type="email"
+                value={email}
+                onchange={handleEmailChange}>
+            </lightning-input>
+
+            <lightning-button
+                label="Add Employee"
+                variant="brand"
+                onclick={handleAddEmployee}
+                class="add-btn">
+            </lightning-button>
+        </div>
+
+        <div class="list-section">
+            <h2 class="title">Employees</h2>
+
+            <template lwc:if={hasEmployees}>
+                <table class="employee-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Email</th>
+                            <th class="action-col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={employees} for:item="emp">
+                            <tr key={emp.id}>
+                                <td>{emp.name}</td>
+                                <td>{emp.age}</td>
+                                <td>{emp.email}</td>
+                                <td class="action-col">
+                                    <lightning-button-icon
+                                        icon-name="utility:delete"
+                                        variant="border-filled"
+                                        alternative-text="Delete"
+                                        data-id={emp.id}
+                                        onclick={handleDeleteEmployee}>
+                                    </lightning-button-icon>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+
+            <template lwc:else>
+                <p class="empty-state">No employees added yet.</p>
+            </template>
+        </div>
+    </div>
+</template>
