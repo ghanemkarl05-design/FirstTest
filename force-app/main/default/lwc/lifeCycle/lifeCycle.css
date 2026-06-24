@@ -1,0 +1,13 @@
+.my-box {
+    padding: 15px;
+    border: 1px solid #ccc;
+}
+button {
+    margin: 5px;
+    padding: 8px;
+    display: block;
+}
+.green-text {
+    color: green;
+    font-weight: bold;
+}

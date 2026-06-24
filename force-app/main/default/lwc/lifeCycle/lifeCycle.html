@@ -1,0 +1,10 @@
+<template>
+    <div class="my-box">
+        <p>Count: {counter}</p>
+        <button onclick={handleIncrement}>Increment Counter</button>
+        <button onclick={handleToggleMessage}>Show/Hide Message</button>
+        <template lwc:if={isMessageVisible}>
+            <p class="green-text">Hello LWC!</p>
+        </template>
+    </div>
+</template>
