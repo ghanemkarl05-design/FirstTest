@@ -1,0 +1,70 @@
+.container {
+    max-width: 600px;
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+    background: #ffffff;
+    border-radius: 8px;
+    font-family: 'Salesforce Sans', Arial, sans-serif;
+}
+
+.title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #16325c;
+    margin: 0 0 1rem 0;
+}
+
+.form lightning-input {
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.add-btn {
+    margin-top: 0.5rem;
+}
+
+.list-section {
+    margin-top: 2rem;
+    border-top: 1px solid #d8dde6;
+    padding-top: 1.5rem;
+}
+
+.employee-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.employee-table th,
+.employee-table td {
+    border-right: 1px solid #e5e5e5;
+}
+
+.employee-table th:last-child,
+.employee-table td:last-child {
+    border-right: none;
+}
+
+.employee-table th {
+    text-align: left;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #54698d;
+    border-bottom: 1px solid #d8dde6;
+    padding: 0.5rem;
+}
+
+.employee-table td {
+    padding: 0.5rem;
+    border-bottom: 1px solid #f0f1f3;
+    font-size: 0.9rem;
+}
+
+.action-col {
+    width: 60px;
+    text-align: center;
+}
+
+.empty-state {
+    color: #706e6b;
+    font-size: 0.9rem;
+}
