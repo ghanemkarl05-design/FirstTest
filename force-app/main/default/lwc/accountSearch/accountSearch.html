@@ -1,0 +1,21 @@
+<template>
+    <div class="search-container">
+        <!-- 1. Enforce numeric input type -->
+        <input type="number" oninput={handleNumberChange} placeholder="Enter minimum employees..."/>
+
+        <!-- 2. Display live results -->
+        <template lwc:if={accounts.data}>
+            <div class="results-list">
+                <template for:each={accounts.data} for:item="acc">
+                    <p key={acc.Id}>
+                        <strong>{acc.Name}</strong> - Employees: {acc.NumberOfEmployees}
+                    </p>
+                </template>
+            </div>
+        </template>
+
+        <template lwc:if={accounts.error}>
+            <p style="color: red;">An error occurred loading accounts.</p>
+        </template>
+    </div>
+</template>
