@@ -1,0 +1,20 @@
+<template>
+    <!-- Filter Dropdown Selection -->
+    <lightning-combobox
+        label="Select Rating"
+        value={selectedRating}
+        options={ratingOptions}
+        onchange={handleFilterChange}>
+    </lightning-combobox>
+
+    <!-- Account List Display Loop -->
+    <template for:each={filteredAccounts} for:item="acc">
+        <div key={acc.Id} title={acc.Name} style="border: 1px solid black; margin: 10px; padding: 10px;">
+            <p><strong>Name:</strong> {acc.Name}</p>
+            <p><strong>Record Tracking ID:</strong> {acc.Id}</p>
+            <p><strong>Industry:</strong> {acc.Industry}</p>
+            <p><strong>Phone:</strong> {acc.Phone}</p>
+            <p><strong>Rating:</strong> {acc.Rating}</p>
+        </div>
+    </template>
+</template>
