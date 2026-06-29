@@ -1,0 +1,100 @@
+<template>
+    <lightning-card title="Account Action Center" icon-name="standard:account">
+        
+        <!-- Action Buttons for Imperative Loading -->
+        <div class="slds-m-around_medium slds-text-align_center">
+            <lightning-button-group>
+                <lightning-button label="Recent Accounts" onclick={handleLoadRecent} variant="brand"></lightning-button>
+                <lightning-button label="Hot Accounts" onclick={handleLoadHot} variant="brand"></lightning-button>
+                <lightning-button label="Accounts Without Phone" onclick={handleLoadNoPhone} variant="brand"></lightning-button>
+            </lightning-button-group>
+        </div>
+
+        <!-- Spinner for Loading States -->
+        <template if:true={isLoading}>
+            <lightning-spinner alt-text="Loading..." size="medium"></lightning-spinner>
+        </template>
+
+        <!-- Main Content Layout -->
+        <div class="slds-grid slds-wrap slds-p-horizontal_medium">
+            
+            <!-- Accounts Grid/List -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-around_small">
+                <h3 class="slds-text-heading_small slds-m-bottom_small">Accounts List ({accountsCount})</h3>
+                <template if:true={accountsCount}>
+                    <div class="scrollable-container">
+                        <template for:each={accounts} for:item="acc">
+                            <div key={acc.Id} 
+                                 class={acc.cardClass} 
+                                 onclick={handleAccountSelect} 
+                                 data-id={acc.Id}>
+                                
+                                <!-- Card Header with Navigation Button -->
+                                <div class="slds-card__header slds-grid slds-grid_align-spread slds-grid_vertical-align-center slds-p-around_none slds-m-bottom_small">
+                                    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                        <div class="slds-media__body">
+                                            <h2 class="slds-card__header-link slds-truncate font-bold">
+                                                {acc.Name}
+                                            </h2>
+                                        </div>
+                                    </header>
+                                    <lightning-button-icon 
+                                        icon-name="utility:navigate" 
+                                        alternative-text="View Record" 
+                                        title="View Record"
+                                        variant="border-filled"
+                                        size="small"
+                                        data-id={acc.Id}
+                                        onclick={handleNavigateToRecord}>
+                                    </lightning-button-icon>
+                                </div>
+
+                                <!-- Card Body Fields -->
+                                <div class="slds-card__body slds-card__body_inner slds-p-horizontal_none">
+                                    <p><strong>Phone:</strong> {acc.Phone}</p>
+                                    <p><strong>Rating:</strong> {acc.Rating}</p>
+                                    <p class="slds-truncate"><strong>Description:</strong> {acc.Description}</p>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                <template if:false={accountsCount}>
+                    <p class="slds-text-color_weak">No accounts loaded yet. Click a button above.</p>
+                </template>
+            </div>
+
+            <!-- Selected Account Details & Edit Form -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-around_small">
+                <h3 class="slds-text-heading_small slds-m-bottom_small">Account Details</h3>
+                <template if:true={selectedAccount}>
+                    <div class="slds-box slds-theme_default">
+                        <p class="slds-m-bottom_x-small"><strong>Name:</strong> {selectedAccount.Name}</p>
+                        <p class="slds-m-bottom_x-small"><strong>Phone:</strong> {selectedAccount.Phone}</p>
+                        <p class="slds-m-bottom_x-small"><strong>Rating:</strong> {selectedAccount.Rating}</p>
+                        <p class="slds-m-bottom_x-small"><strong>Industry:</strong> {selectedAccount.Industry}</p>
+                        
+                        <!-- Description Input and Update Button -->
+                        <div class="slds-m-top_medium">
+                            <lightning-textarea 
+                                label="Description" 
+                                value={selectedAccount.Description} 
+                                onchange={handleDescriptionChange}>
+                            </lightning-textarea>
+                            <lightning-button 
+                                label="Update Description" 
+                                variant="brand-success" 
+                                onclick={handleUpdateDescription} 
+                                class="slds-m-top_small slds-show">
+                            </lightning-button>
+                        </div>
+                    </div>
+                </template>
+                <template if:false={selectedAccount}>
+                    <p class="slds-text-color_weak">Select an account from the list to view and update details.</p>
+                </template>
+            </div>
+
+        </div>
+    </lightning-card>
+</template>

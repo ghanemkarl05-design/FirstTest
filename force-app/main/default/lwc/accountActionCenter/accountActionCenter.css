@@ -1,0 +1,25 @@
+.custom-card {
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #dddbda;
+}
+
+.custom-card:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transform: translateY(-1px);
+}
+
+.card-selected {
+    border: 2px solid #0176d3;
+    background-color: #f3f3f3;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.scrollable-container {
+    max-height: 450px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
